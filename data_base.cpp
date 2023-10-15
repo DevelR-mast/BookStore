@@ -4,11 +4,14 @@ Devoma::data_base_file::data_base_file() : file{NAMEFILE, std::ios::app }
 {
 	std::string NameBook{}, NameAuthor{}, FamilyAuthor{}, Publisher{};
 	int Price, NumberList, CountBook;
+
+	Devoma::abstract_fabrica_book* fabrica = new Devoma::fabrica_first{};
+
 	while (!file.eof())
 	{
 		file >> NameBook; file >> NameAuthor; file >> FamilyAuthor; file >> Publisher;
 		file >> Price; file >> NumberList; file >> CountBook;
-		container_book.push_back( new book{ NameBook, NameAuthor, FamilyAuthor, Publisher, Price, NumberList });
+		container_book.push_back( fabrica->create_standart_book( NameBook, NameAuthor, FamilyAuthor, Publisher, Price, NumberList ));
 		container_product[NameBook] = CountBook;
 	}
 	file.close();
@@ -18,8 +21,10 @@ Devoma::data_base_file::~data_base_file() {}
 
 void Devoma::data_base_file::add_book()
 {
+	Devoma::abstract_fabrica_book* fabrica = new Devoma::fabrica_first{};
+
 	std::string NameBook{}, NameAuthor{}, FamilyAuthor{}, Publisher{};
-	int Price, NumberList, CountBook;
+	int Price{}, NumberList{}, CountBook{};
 	std::cout << "Enter Name Book: "; std::cin >> NameBook;
 	std::cout << "Enter Name Author: "; std::cin >> NameAuthor;
 	std::cout << "Enter Family Author: "; std::cin >> FamilyAuthor;
@@ -31,7 +36,7 @@ void Devoma::data_base_file::add_book()
 	try
 	{
 		chekup_book(NameBook);
-		container_book.push_back(new book{ NameBook, NameAuthor, FamilyAuthor, Publisher, Price, NumberList });
+		container_book.push_back( fabrica->create_standart_book( NameBook, NameAuthor, FamilyAuthor, Publisher, Price, NumberList ));
 		container_product[NameBook] = CountBook;
 	}
 	catch (Devoma::data_base_file::error Error)
@@ -80,4 +85,16 @@ void Devoma::data_base_file::show_database() const
 void Devoma::data_base_file::update_file()
 {
 	file.open(NAMEFILE);
+	file.clear();
+
+	for (auto obj : container_book)
+	{
+		file << obj->ret_name_book() << " ";
+		file << obj->ret_name_author() << " ";
+		file << obj->ret_family_author() << " ";
+		file << obj->ret_publisher() << " ";
+		file << obj->ret_price() << " ";
+		file << obj->ret_number_list() << " ";
+		file << container_product.at(obj->ret_name_book()) << " ";
+	}
 }

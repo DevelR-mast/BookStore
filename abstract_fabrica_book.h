@@ -10,6 +10,6 @@ namespace Devoma
 	public:
 		virtual ~abstract_fabrica_book() = default;
 	public:
-		virtual book_base *create_standart_book() = 0;
+		virtual book_base *create_standart_book(std::string NB, std::string NA, std::string FA, std::string P, int PR, int NL) = 0;
 	};
 }
