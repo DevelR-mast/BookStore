@@ -13,28 +13,58 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы заголовков\fabrica">
+      <UniqueIdentifier>{bbba4164-0794-41a3-8f47-fe3d17b20dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\book">
+      <UniqueIdentifier>{681c8179-cf27-46ad-8271-5acd6b8d0a1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\basedata">
+      <UniqueIdentifier>{9f1a8bd7-2f2a-4072-bdaf-cd2ea8f7c0a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\user_interface">
+      <UniqueIdentifier>{832bb0c1-b05f-49b6-926f-28230bc9aecd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\account_user">
+      <UniqueIdentifier>{3ef6e8f7-f103-4a4f-9f92-2ae7b05f43cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\database_account">
+      <UniqueIdentifier>{f7db405f-970c-4075-94a0-fb5eaab46e77}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="book.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="book_interface.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="abstract_fabrica_book.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\fabrica</Filter>
     </ClInclude>
     <ClInclude Include="fabrica_first.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\fabrica</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="book.h">
+      <Filter>Файлы заголовков\book</Filter>
     </ClInclude>
-    <ClInclude Include="data_base_abstract.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="book_interface.h">
+      <Filter>Файлы заголовков\book</Filter>
     </ClInclude>
     <ClInclude Include="data_base.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\basedata</Filter>
+    </ClInclude>
+    <ClInclude Include="data_base_abstract.h">
+      <Filter>Файлы заголовков\basedata</Filter>
+    </ClInclude>
+    <ClInclude Include="main_interface.h">
+      <Filter>Файлы заголовков\user_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="account_user.h">
+      <Filter>Файлы заголовков\account_user</Filter>
+    </ClInclude>
+    <ClInclude Include="account_interface.h">
+      <Filter>Файлы заголовков\account_user</Filter>
+    </ClInclude>
+    <ClInclude Include="database_accoutn_interface.h">
+      <Filter>Файлы заголовков\database_account</Filter>
+    </ClInclude>
+    <ClInclude Include="database_account.h">
+      <Filter>Файлы заголовков\database_account</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +75,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="data_base.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="account_user.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="database_account.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
