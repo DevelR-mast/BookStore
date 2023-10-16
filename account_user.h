@@ -20,5 +20,12 @@ namespace Devoma
 		void set_name() override;
 		void set_family() override;
 		void set_phonenumber() override;
+		void show_data() const override;
+	public:
+		std::string ret_login() const override;
+		std::string ret_password() const override;
+		std::string ret_name() const override;
+		std::string ret_family() const override;
+		std::string ret_phonenumber() const override;
 	};
 }

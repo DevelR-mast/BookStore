@@ -66,6 +66,12 @@
     <ClInclude Include="database_account.h">
       <Filter>Файлы заголовков\database_account</Filter>
     </ClInclude>
+    <ClInclude Include="abstract_fabrica_account.h">
+      <Filter>Файлы заголовков\fabrica</Filter>
+    </ClInclude>
+    <ClInclude Include="fabrica_account.h">
+      <Filter>Файлы заголовков\fabrica</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="book.cpp">
@@ -81,6 +87,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="database_account.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="fabrica_account.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

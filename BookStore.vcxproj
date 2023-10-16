@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="abstract_fabrica_account.h" />
     <ClInclude Include="abstract_fabrica_book.h" />
     <ClInclude Include="account_interface.h" />
     <ClInclude Include="account_user.h" />
@@ -136,6 +137,7 @@
     <ClInclude Include="database_accoutn_interface.h" />
     <ClInclude Include="data_base.h" />
     <ClInclude Include="data_base_abstract.h" />
+    <ClInclude Include="fabrica_account.h" />
     <ClInclude Include="fabrica_first.h" />
     <ClInclude Include="main_interface.h" />
   </ItemGroup>
@@ -144,6 +146,7 @@
     <ClCompile Include="book.cpp" />
     <ClCompile Include="database_account.cpp" />
     <ClCompile Include="data_base.cpp" />
+    <ClCompile Include="fabrica_account.cpp" />
     <ClCompile Include="fabrica_first.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
