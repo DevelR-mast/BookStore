@@ -1,9 +1,9 @@
 #include "data_base.h"
 
-Devoma::data_base_file::data_base_file() : file{NAMEFILE} 
+Devoma::data_base_file::data_base_file() : file{"database_book.txt"}
 {
 	std::string NameBook{}, NameAuthor{}, FamilyAuthor{}, Publisher{};
-	int Price, NumberList, CountBook;
+	int Price{}, NumberList{}, CountBook{};
 
 	Devoma::abstract_fabrica_book* fabrica = new Devoma::fabrica_first{};
 
@@ -84,7 +84,7 @@ void Devoma::data_base_file::show_database() const
 
 void Devoma::data_base_file::update_file()
 {
-	file.open(NAMEFILE);
+	file.open("database_book.txt");
 	file.clear();
 
 	for (auto obj : container_book)

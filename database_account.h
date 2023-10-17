@@ -22,8 +22,8 @@ namespace Devoma
 		database_account();
 		~database_account() = default;
 	public:
-		void add_account() override;
-		void add_account(std::string Login, std::string Password, std::string Name, std::string Family, std::string PhoneNumber) override;
+		account_base* add_account() override;
+		account_base* add_account(std::string Login, std::string Password, std::string Name, std::string Family, std::string PhoneNumber) override;
 		void delete_account() override;
 		void find_account() override;
 		account_base* authorization(std::string Login, std::string Password) override;

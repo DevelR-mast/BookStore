@@ -105,4 +105,8 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="database_account.txt" />
+    <Text Include="database_book.txt" />
+  </ItemGroup>
 </Project>

@@ -42,7 +42,15 @@ void Devoma::kernel::sign_up()
 	std::cout << "Enter name: "; std::cin >> name;
 	std::cout << "Enter family: "; std::cin >> family;
 	std::cout << "Enter phonenumber: "; std::cin >> phonenumber;
-	DataBaseAccount->add_account(login, password, name, family, phonenumber);
+	try
+	{
+		Devoma::account_base *account = DataBaseAccount->add_account(login, password, name, family, phonenumber);
+		interface_account(account);
+	}
+	catch (Devoma::error er)
+	{
+		sign_in();
+	}
 }
 
 void Devoma::kernel::sign_in()
@@ -57,7 +65,7 @@ void Devoma::kernel::sign_in()
 	}
 	catch (Devoma::error er)
 	{
-		std::cout << "Repat please: " << std::endl;
+		std::cout << "--Repeat please--" << std::endl;
 		sign_in();
 	}
 }
@@ -70,21 +78,30 @@ void Devoma::kernel::interface_account(Devoma::account_base* account)
 		std::cout << "(1)-Look catalog book-" << std::endl;
 		std::cout << "(2)-Find book-" << std::endl;
 		std::cout << "(3)-Show profile-" << std::endl;
+		std::cout << "(4)-Exit-" << std::endl;
 		char choise{ 'a' };
+		std::cout << "What do you want: ";
+		std::cin >> choise;
 		switch (choise)
 		{
 		case '1':
 		{
 			DataBaseBook->show_database();
+			break;
 		}
 		case '2':
 		{
 			DataBaseBook->search_book();
+			break;
 		}
 		case '3':
 		{
 			interface_profile(account);
 			break;
+		}
+		case 'e':
+		{
+			exit(0);
 		}
 		default:
 		{
@@ -104,6 +121,7 @@ void Devoma::kernel::interface_profile(Devoma::account_base* account)
 	std::cout << "(4)-Change password-" << std::endl;
 	//std::cout << "(5)-Change login-" << std::endl;
 	char choise{ 'a' };
+	std::cin >> choise;
 	switch (choise)
 	{
 	case '1':
