@@ -72,6 +72,18 @@
     <ClInclude Include="fabrica_account.h">
       <Filter>Файлы заголовков\fabrica</Filter>
     </ClInclude>
+    <ClInclude Include="sing_in.h">
+      <Filter>Файлы заголовков\user_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="sing_up.h">
+      <Filter>Файлы заголовков\user_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface_account.h">
+      <Filter>Файлы заголовков\user_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="node.h">
+      <Filter>Файлы заголовков\user_interface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="book.cpp">
@@ -90,6 +102,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="fabrica_account.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

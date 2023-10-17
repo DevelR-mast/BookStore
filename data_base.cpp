@@ -57,7 +57,7 @@ void Devoma::data_base_file::delete_book()
 		container_product[namebook] = 0;
 		update_file();
 	}
-	catch (Devoma::data_base_file::error Error)
+	catch (Devoma::data_base_file::error er)
 	{
 		std::cout << "You can't delete that book. Her don'y have" << std::endl;
 	}
