@@ -1,6 +1,7 @@
 #pragma once
 #include "data_base_abstract.h"
 #include "fabrica_first.h"
+#include "error.h"
 
 #include <fstream>
 #include <unordered_map>
@@ -17,8 +18,6 @@ namespace Devoma
 		std::unordered_map<std::string, int> container_product;
 		std::vector<book_base*> container_book;
 	private:
-		class error {};
-	private:
 		void update_file();
 		void chekup_book(std::string NB) const;
 	public:
@@ -28,5 +27,6 @@ namespace Devoma
 		void add_book() override;
 		void delete_book() override;
 		void show_database() const override;
+		void search_book() const override;
 	};
 }

@@ -19,17 +19,17 @@
     <Filter Include="Файлы заголовков\book">
       <UniqueIdentifier>{681c8179-cf27-46ad-8271-5acd6b8d0a1c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\basedata">
-      <UniqueIdentifier>{9f1a8bd7-2f2a-4072-bdaf-cd2ea8f7c0a9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\user_interface">
-      <UniqueIdentifier>{832bb0c1-b05f-49b6-926f-28230bc9aecd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\account_user">
       <UniqueIdentifier>{3ef6e8f7-f103-4a4f-9f92-2ae7b05f43cb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Файлы заголовков\database_account">
       <UniqueIdentifier>{f7db405f-970c-4075-94a0-fb5eaab46e77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\kernel">
+      <UniqueIdentifier>{7bc70085-b221-41b5-9e19-99b4f8b109a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\data_base_book">
+      <UniqueIdentifier>{9f1a8bd7-2f2a-4072-bdaf-cd2ea8f7c0a9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -46,13 +46,10 @@
       <Filter>Файлы заголовков\book</Filter>
     </ClInclude>
     <ClInclude Include="data_base.h">
-      <Filter>Файлы заголовков\basedata</Filter>
+      <Filter>Файлы заголовков\data_base_book</Filter>
     </ClInclude>
     <ClInclude Include="data_base_abstract.h">
-      <Filter>Файлы заголовков\basedata</Filter>
-    </ClInclude>
-    <ClInclude Include="main_interface.h">
-      <Filter>Файлы заголовков\user_interface</Filter>
+      <Filter>Файлы заголовков\data_base_book</Filter>
     </ClInclude>
     <ClInclude Include="account_user.h">
       <Filter>Файлы заголовков\account_user</Filter>
@@ -72,17 +69,14 @@
     <ClInclude Include="fabrica_account.h">
       <Filter>Файлы заголовков\fabrica</Filter>
     </ClInclude>
-    <ClInclude Include="sing_in.h">
-      <Filter>Файлы заголовков\user_interface</Filter>
-    </ClInclude>
-    <ClInclude Include="sing_up.h">
-      <Filter>Файлы заголовков\user_interface</Filter>
-    </ClInclude>
-    <ClInclude Include="interface_account.h">
-      <Filter>Файлы заголовков\user_interface</Filter>
+    <ClInclude Include="kernel.h">
+      <Filter>Файлы заголовков\kernel</Filter>
     </ClInclude>
     <ClInclude Include="node.h">
-      <Filter>Файлы заголовков\user_interface</Filter>
+      <Filter>Файлы заголовков\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="error.h">
+      <Filter>Файлы заголовков\kernel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +99,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="kernel.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

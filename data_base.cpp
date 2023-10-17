@@ -39,7 +39,7 @@ void Devoma::data_base_file::add_book()
 		container_book.push_back( fabrica->create_standart_book( NameBook, NameAuthor, FamilyAuthor, Publisher, Price, NumberList ));
 		container_product[NameBook] = CountBook;
 	}
-	catch (Devoma::data_base_file::error Error)
+	catch (Devoma::error Error)
 	{
 		std::cout << "Book can't create. She already exists";
 	}
@@ -57,7 +57,7 @@ void Devoma::data_base_file::delete_book()
 		container_product[namebook] = 0;
 		update_file();
 	}
-	catch (Devoma::data_base_file::error er)
+	catch (Devoma::error er)
 	{
 		std::cout << "You can't delete that book. Her don'y have" << std::endl;
 	}
@@ -96,5 +96,68 @@ void Devoma::data_base_file::update_file()
 		file << obj->ret_price() << " ";
 		file << obj->ret_number_list() << " ";
 		file << container_product.at(obj->ret_name_book()) << " ";
+	}
+}
+
+void Devoma::data_base_file::search_book() const
+{
+	std::cout << "How are we going search?" << std::endl;
+	std::cout << "(1)NameBook | (2)NameAuthor | (3)Publisher" << std::endl;
+	std::cout << "(e) Exit" << std::endl;
+	char choise{ 'a' };
+	std::string message {};
+	switch (choise)
+	{
+	case '1':
+	{
+		std::cout << "Enter NameBook: "; std::cin >> message;
+		for (auto book : container_book)
+		{
+			if (book->ret_name_book() != message) { continue; }
+			else
+			{
+				book->show_data();
+				std::cout << "Count: " << container_product.at(book->ret_name_book()) << std::endl;
+			}
+		}
+		break;
+	}
+	case '2':
+	{
+		std::cout << "Enter NameAuthor: "; std::cin >> message;
+		for (auto book : container_book)
+		{
+			if (book->ret_name_book() != message) { continue; }
+			else
+			{
+				book->show_data();
+				std::cout << "Count: " << container_product.at(book->ret_name_book()) << std::endl;
+			}
+		}
+		break;
+	}
+	case '3':
+	{
+		std::cout << "Enter Publisher: "; std::cin >> message;
+		for (auto book : container_book)
+		{
+			if (book->ret_name_book() != message) { continue; }
+			else
+			{
+				book->show_data();
+				std::cout << "Count: " << container_product.at(book->ret_name_book()) << std::endl;
+			}
+		}
+		break;
+	}
+	case 'e':
+	{
+		break;
+	}
+	default:
+	{
+		std::cout << "Dont correct enter. Repeat." << std::endl;
+		search_book();
+	}
 	}
 }

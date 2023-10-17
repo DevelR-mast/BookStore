@@ -20,7 +20,7 @@ void Devoma::database_account::checkup_login(std::string Login) const
 	for (auto account : container_account)
 	{
 		if (account->ret_login() != Login) { continue; }
-		else throw Error{};
+		else throw Devoma::error{};
 	}
 }
 
@@ -38,7 +38,7 @@ void Devoma::database_account::add_account()
 		Devoma::abstaract_fabrica_account* fabrica = new Devoma::fabrica_account{};
 		container_account.push_back(fabrica->create_account(Login, Password, Name, Family, Phonenumber));
 	}
-	catch (database_account::Error e)
+	catch (Devoma::error e)
 	{
 		std::cout << "Can't create accoutn. Login already exists" << std::endl;
 	}
@@ -53,7 +53,7 @@ void Devoma::database_account::add_account(std::string Login, std::string Passwo
 		container_account.push_back(fabrica->create_account(Login, Password, Name, Family, Phonenumber));
 		update_database();
 	}
-	catch (database_account::Error e)
+	catch (Devoma::error e)
 	{
 		std::cout << "Can't create accoutn. Login already exists" << std::endl;
 	}
@@ -70,7 +70,7 @@ void Devoma::database_account::delete_account()
 		checkup_login(Login);
 		std::cout << "Account with that login don'y find!" << std::endl;
 	}
-	catch (database_account::Error e)
+	catch (Devoma::error e)
 	{
 		std::vector<account_base*>::iterator iter = container_account.begin();
 		while(true)
@@ -152,4 +152,30 @@ void Devoma::database_account::update_database()
 		file_account << account->ret_phonenumber(); file_account << " ";
 	}
 	file_account.close();
+}
+
+Devoma::account_base *Devoma::database_account::authorization(std::string Login, std::string Password)
+{
+	for (auto account : container_account)
+	{
+		if (account->ret_login() != Login) { continue; }
+		else if (account->ret_login() == Login)
+		{
+			for (auto account2 : container_account)
+			{
+				if (account2->ret_password() != Password) { continue; }
+				else if (account2->ret_password() == Password) { return account2; }
+				else 
+				{
+					std::cout << "Wrong password" << std::endl;
+					throw Devoma::error{};
+				}
+			}
+		}
+		else
+		{
+			std::cout << "Wrong login" << std::endl;
+			throw Devoma::error{};
+		}
+	}
 }

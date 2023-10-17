@@ -6,6 +6,7 @@
 #include "account_interface.h"
 #include "database_accoutn_interface.h"
 #include "fabrica_account.h"
+#include "error.h"
 
 namespace Devoma
 {
@@ -14,7 +15,6 @@ namespace Devoma
 	private:
 		std::fstream file_account;
 		std::vector<Devoma::account_base*> container_account;
-		class Error{};
 	private:
 		void update_database();
 		void checkup_login(std::string Login) const;
@@ -26,5 +26,6 @@ namespace Devoma
 		void add_account(std::string Login, std::string Password, std::string Name, std::string Family, std::string PhoneNumber) override;
 		void delete_account() override;
 		void find_account() override;
+		account_base* authorization(std::string Login, std::string Password) override;
 	};
 }
