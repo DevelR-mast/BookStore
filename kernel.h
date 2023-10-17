@@ -16,8 +16,8 @@ namespace Devoma
 		void interface_account(Devoma::account_base* account);
 		void interface_profile(Devoma::account_base* account);
 	public:
-		kernel() = default;;
-		~kernel() = default;
+		kernel();;
+		~kernel();
 	public:
 		void start();
 	};

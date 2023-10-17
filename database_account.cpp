@@ -3,13 +3,14 @@
 Devoma::database_account::database_account()
 {
 	std::string Login {}, Password {}, Name {}, Family {}, Phonenumber {};
-	file_account.open(FILEACCOUNT, std::ios::app);
+	file_account.open(FILEACCOUNT);
 
 	Devoma::abstaract_fabrica_account* fabrica = new Devoma::fabrica_account{};
 
 	while (!file_account.eof())
 	{
 		file_account >> Login; file_account >> Password; file_account >> Name; file_account >> Family; file_account >> Phonenumber;
+		std::cout << Login << " 1" << Password << " " << Name << " " << Family << " " << Phonenumber << std::endl;
 		container_account.push_back(fabrica->create_account(Login, Password, Name, Family, Phonenumber));
 	}
 	file_account.close();

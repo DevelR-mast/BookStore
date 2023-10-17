@@ -1,6 +1,6 @@
 #include "data_base.h"
 
-Devoma::data_base_file::data_base_file() : file{NAMEFILE, std::ios::app } 
+Devoma::data_base_file::data_base_file() : file{NAMEFILE} 
 {
 	std::string NameBook{}, NameAuthor{}, FamilyAuthor{}, Publisher{};
 	int Price, NumberList, CountBook;

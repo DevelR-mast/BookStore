@@ -2,7 +2,7 @@
 #include "account_interface.h"
 #include <string>
 
-#define FILEACCOUNT "database_account.txt"
+constexpr auto FILEACCOUNT = "database_account.txt";
 
 namespace Devoma
 {

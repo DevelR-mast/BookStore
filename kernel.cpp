@@ -1,16 +1,28 @@
 #include "kernel.h"
 
+Devoma::kernel::kernel()
+{
+	DataBaseAccount = new database_account{};
+	DataBaseBook = new data_base_file{};
+}
+
+Devoma::kernel::~kernel()
+{
+	delete DataBaseAccount;
+	delete DataBaseBook;
+}
+
 void Devoma::kernel::start()
 {
 	std::cout << "****************Welcome to BookStore*******************" << std::endl;
-	char choice{ 'a' };
+	char choise{ 'a' };
 	std::cout << "Sing up(u) or Sing in(i)" << std::endl;
-	std::cout << "Enter your choice: "; std::cin >> choice;
-	if (choice == 'i')
+	std::cout << "Enter your choice: "; std::cin>>choise;
+	if (choise == 'i')
 	{
 		sign_in();
 	}
-	else if (choice == 'u')
+	else if (choise == 'u')
 	{
 		sign_up();
 	}
@@ -40,7 +52,8 @@ void Devoma::kernel::sign_in()
 	std::cout << "Enter password: "; std::cin >> password;
 	try
 	{
-		interface_account(DataBaseAccount->authorization(login, password));
+		Devoma::account_base* account = DataBaseAccount->authorization(login, password);
+		interface_account(account);
 	}
 	catch (Devoma::error er)
 	{
