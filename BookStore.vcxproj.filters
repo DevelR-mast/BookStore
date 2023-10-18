@@ -78,6 +78,9 @@
     <ClInclude Include="error.h">
       <Filter>Файлы заголовков\kernel</Filter>
     </ClInclude>
+    <ClInclude Include="account_admin.h">
+      <Filter>Файлы заголовков\account_user</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="book.cpp">

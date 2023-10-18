@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="abstract_fabrica_account.h" />
     <ClInclude Include="abstract_fabrica_book.h" />
+    <ClInclude Include="account_admin.h" />
     <ClInclude Include="account_interface.h" />
     <ClInclude Include="account_user.h" />
     <ClInclude Include="book.h" />
